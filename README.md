@@ -6,7 +6,7 @@
 
 This project explores reported COVID-19 cases, deaths, and vaccination records across countries in **North America and South America**. SQL is used to inspect source data, combine daily records, calculate descriptive ratios, and compare country-level indicators. Two Tableau dashboards present the analysis visually.
 
-[**View the SQL analysis**](Covid_Analysis.sql) · [**Cases & deaths dashboard**](https://public.tableau.com/views/CovidAnalysis_16815283795840/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link) · [**Vaccination dashboard**](https://public.tableau.com/shared/SWSZGG34Q?:display_count=n&:origin=viz_share_link)
+[**View the SQL analysis**](Covid_Analysis.sql) · [**Cases & deaths dashboard**](https://public.tableau.com/views/CovidAnalysis_16815283795840/Dashboard1) · [**Vaccination tracker preview**](Covid-Vaccines-Dashboard.png)
 
 ## Research Questions
 
@@ -17,14 +17,14 @@ This project explores reported COVID-19 cases, deaths, and vaccination records a
 
 ## Dataset
 
-The original SQL analysis uses two source tables in a Microsoft SQL Server database:
+The SQL analysis uses two source tables in a Microsoft SQL Server database:
 
 | Table | Main fields used |
 |---|---|
 | `PortfolioProject1.dbo.CovidDeaths` | `continent`, `location`, `date`, `population`, `total_cases`, `total_deaths`, `new_deaths` |
 | `PortfolioProject1.dbo.CovidVaccinations` | `location`, `date`, `total_vaccinations`, `new_vaccinations`, `people_fully_vaccinated_per_hundred` |
 
-Only country records labeled **North America** or **South America** in the deaths table are included. The underlying CSV/database files are **not committed to this repository**, so exact dataset row counts, date range, and source snapshot cannot be independently confirmed from the repository alone. To reproduce the queries, provide compatible source tables with these columns.
+The project was developed while following Alex The Analyst's COVID-19 SQL and Tableau tutorials, adapting the geographical focus to countries in **North America and South America**. The tutorial points to Our World in Data as its data source; the specific copy used for this project may have been downloaded via Kaggle, but its original download page has not been verified. Only country records labeled **North America** or **South America** in the deaths table are included. The underlying CSV/database files are **not committed to this repository**, so exact dataset row counts, date range, and source snapshot cannot be independently confirmed from the repository alone. To reproduce the queries, provide compatible source tables with these columns.
 
 ## Methodology
 
@@ -47,11 +47,11 @@ The queries are written for **Microsoft SQL Server (T-SQL)**. The SQL file build
 
 ### Vaccination
 
-[**Open the interactive vaccination dashboard in Tableau Public**](https://public.tableau.com/shared/SWSZGG34Q?:display_count=n&:origin=viz_share_link)
-
 ![COVID-19 vaccination dashboard](Covid-Vaccines-Dashboard.png)
 
-These screenshots are snapshots of the Tableau dashboards; the linked interactive versions may depend on Tableau Public availability.
+*The original interactive Tableau Public vaccination-tracker link is no longer accessible. This screenshot preserves the dashboard's visual presentation.*
+
+These images are screenshots of the dashboards created for this project; only the cases-and-deaths dashboard is linked as an interactive view.
 
 ## Project Structure
 
@@ -68,9 +68,13 @@ American-Covid-Analysis/
 1. Create a Microsoft SQL Server database named `PortfolioProject1` (or update the database references in the SQL script).
 2. Import the historical `CovidDeaths` and `CovidVaccinations` source datasets into the `dbo` schema, retaining the fields listed above.
 3. Run [`Covid_Analysis.sql`](Covid_Analysis.sql) in SQL Server Management Studio or another compatible SQL Server client.
-4. Inspect the query outputs and open the linked Tableau dashboards to explore the visual presentation.
+4. Inspect the SQL outputs and compare them with the dashboard screenshots. The cases-and-deaths dashboard also has an interactive Tableau Public link.
 
 The source data and Tableau workbook files are not bundled here; reproducing the exact dashboard snapshots would require their original underlying data extracts and workbook configurations.
+
+## Acknowledgment
+
+This project was developed as an adaptation of [Alex The Analyst's COVID-19 Data Exploration portfolio tutorial](https://github.com/AlexTheAnalyst/PortfolioProjects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql) and associated Tableau visualization lessons. The tutorial studies worldwide data; this implementation focuses on the Americas and includes its own SQL queries and dashboard presentation.
 
 ## Limitations
 
