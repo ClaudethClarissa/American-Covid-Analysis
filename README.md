@@ -51,7 +51,7 @@ The queries are written for **Microsoft SQL Server (T-SQL)**. The SQL file build
 
 *The original interactive Tableau Public vaccination-tracker link is no longer accessible. This screenshot preserves the dashboard's visual presentation.*
 
-These images are screenshots of the dashboards created for this project; only the cases-and-deaths dashboard is linked as an interactive view.
+These images document the dashboards created for this project. They reflect the historical Tableau work, while the SQL script has since been reviewed and refined; the screenshots have not been regenerated from that revised script. Only the cases-and-deaths dashboard has an interactive link.
 
 ## Project Structure
 
@@ -84,6 +84,7 @@ This project was developed as an adaptation of [Alex The Analyst's COVID-19 Data
 - Recorded deaths divided by recorded cases is a descriptive ratio, **not** an infection-fatality rate.
 - The latest nonmissing vaccination observation may occur on a different date for each country.
 - The SQL checks flag duplicate country–date keys, but a source-data review is required before making definitive cross-country comparisons.
+- The revised SQL has been reviewed for logic and SQL Server syntax, but could not be executed against the original source tables because those data files are not included.
 
 ---
 
